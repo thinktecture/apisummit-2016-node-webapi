@@ -1,0 +1,17 @@
+{
+  "name": "nodejs-api-summit",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/thinktecture/nodejs-api-summit.git",
+  "author": "Manuel Rauber <manuel.rauber@thinktecture.com>",
+  "license": "MIT",
+  "dependencies": {
+    "pg": "^6.1.0",
+    "restify": "^4.3.0",
+    "restify-cors": "^1.0.1",
+    "sequelize": "^3.27.0"
+  },
+  "scripts": {
+    "start": "node src/api/index.js"
+  }
+}
