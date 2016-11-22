@@ -9,11 +9,23 @@ class Database {
     }
 
     init() {
-        // TODO: Implement me! (Sequelize init)
+        this._sequelize = new Sequelize('postgres://nodeJsApiSummit:nodeJsApiSummit@localhost:5432/nodeJsApiSummit');
+
+        this._initModels();
+
+        return this._sequelize.sync({
+            force: true
+        })
+            .then(() => {
+                return {
+                    models: this._models
+                }
+            });
     }
 
     _initModels() {
-        // TODO: Implement me! (Import model)
+        const customerModel = this._sequelize.import('../models/customer.js');
+        this._models[customerModel.name] = customerModel;
     }
 }
 

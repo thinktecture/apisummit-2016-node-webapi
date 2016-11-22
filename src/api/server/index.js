@@ -1,49 +1,25 @@
 'use strict';
 
 const restify = require('restify'),
-    restifyCors = require('restify-cors'),
     controllers = require('../controllers');
 
 class Server {
     constructor() {
-        this._server = restify.createServer();
-
-        const cors = restifyCors({
-            origins: ['*']
-        });
-
-        this._server.pre(cors.preflight);
-        this._server.use(cors.actual);
-        this._server.use(restify.bodyParser());
+        // TODO: Implement me! (Create server)
     }
 
     start(port) {
         this._initializeControllers();
 
-        this._server.listen(port, () => console.log('Server is up and running'));
+        // TODO: Implement me! (Start server)
     }
 
     addRoute(method, url, callback) {
-        if (!method) {
-            throw new Error('Parameter method not set.');
-        }
-
-        if (!url) {
-            throw new Error('Parameter url not set.');
-        }
-
-        if (!callback) {
-            throw new Error('Parameter callback not set.');
-        }
-
-        method = method.toLowerCase();
-
-        this._server[method](url, callback);
-        console.log(`Added api ${method.toUpperCase()} ${url}`);
+        // TODO: Implement me! (Add route)
     }
 
     _initializeControllers() {
-        controllers.forEach(c => c.init(this));
+        // TODO: Implement me! (Initialize controllers)
     }
 }
 
