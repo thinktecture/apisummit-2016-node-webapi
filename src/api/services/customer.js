@@ -14,6 +14,11 @@ class CustomerService {
                 firstName, lastName
             }));
     }
+
+    remove(id) {
+        return this.get(id)
+            .then(model => model.destroy());
+    }
 }
 
 module.exports = new CustomerService();
