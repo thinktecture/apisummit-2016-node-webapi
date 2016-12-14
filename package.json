@@ -12,6 +12,6 @@
     "sequelize": "^3.27.0"
   },
   "scripts": {
-    "start": "node src/api/index.js"
+    "start": "node src/api/index. js"
   }
 }
